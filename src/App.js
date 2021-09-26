@@ -11,6 +11,7 @@ function App() {
   const [hasta, setHasta] = useState(null);
   const [pais, setPais] = useState("Todos");
   const [tamaño, setTamaño] = useState("Todos");
+  const [imprimePrecio, setImprimePrecio] = useState("Todos")
   const [precio, setPrecio] = useState("Todos");
 
   // Opciones para LocaleDateString
@@ -42,7 +43,7 @@ let hastaNaturalHotel = new Date(hotelsData.availabilityTo*1000 + "T00:00:00").t
     if(precio === "Todos") {
       return true;
     } else {
-      return hotel.price === precio.length;
+      return hotel.price === precio.length; 
     }
   })
 
@@ -60,19 +61,7 @@ let hastaNaturalHotel = new Date(hotelsData.availabilityTo*1000 + "T00:00:00").t
     }
   });
 
-  let descripcionPrecio = () => {
-    if (precio === "$") {
-      return "$ - Hotel Económico"
-    } else if (precio === "$$") {
-      return "$$ - Hotel Confort"
-    } else if (precio === "$$$") {
-      return "$$$ - Hotel Lujoso"
-    } else if (precio === "$$$$") {
-      return "$$$$ - Hotel Magnífico"
-    } else {
-      return precio
-    }
-  }
+
 
   let descripcionTamaño = () => {
     if (tamaño <= 10) {
@@ -91,8 +80,8 @@ let hastaNaturalHotel = new Date(hotelsData.availabilityTo*1000 + "T00:00:00").t
       desde={desde}
       hasta={hasta}
       pais={pais} 
-      precio={descripcionPrecio}
-      // precio = {precio}
+      // precio={descripcionPrecio}
+      imprimePrecio = {imprimePrecio}
       tamaño={tamaño}
       />
       <Filters
@@ -102,6 +91,8 @@ let hastaNaturalHotel = new Date(hotelsData.availabilityTo*1000 + "T00:00:00").t
         hasta={hasta}
         precio={precio}
         setPrecio={setPrecio}
+        imprimePrecio = {imprimePrecio}
+        setImprimePrecio = {setImprimePrecio}
         pais={pais}
         setPais={setPais}
         tamaño={tamaño}
@@ -112,8 +103,8 @@ let hastaNaturalHotel = new Date(hotelsData.availabilityTo*1000 + "T00:00:00").t
         hotelsData={hotelsData}
       />
       <Hotels 
-        Desde = {fecha1UNIX}
-        hoteles={hotelsData} 
+        Desde = {desde}
+        hoteles={hotelsData}
         // listaHoteles={hotelsFiltered} 
         filtrarLista={filtrarPaisPrecioTamaño}
       />

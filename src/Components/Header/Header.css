@@ -6,11 +6,28 @@
     background-size:cover;
   }
 
+  .header::after {
+    content: '';
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 60vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.texto-encabezado {
+  z-index: 10;
+  position: relative;
+}
   
   
   .texto-encabezado > h1 {
     font-family: "Kaisei Opti", serif;
-    background: -webkit-linear-gradient(#111312,#2d9bce);
+    background: -webkit-linear-gradient(#d9edf5,#2d9bce);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: #17738f;  
@@ -21,7 +38,7 @@
 
   .texto-encabezado > h3 {
     font-family: "Kaisei Opti", serif;
-    color: #084c6b; 
+    color: #bcd3dd; 
     font-size: 1.4em;
     padding: 6px;
     text-align: center;

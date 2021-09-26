@@ -5,18 +5,16 @@ import Hotel from "../Hotel/Hotel";
 
 function Hotels(props) {
 
-  let hotelPrecio = () => {
-  {props.filtrarLista.map((hotel)=> {
-    if (hotel.price === "1") {
-      return "$"
-    } else if (hotel.price === "2") {
-      return "$$"
-    } else if (hotel.price === "3") {
-      return "$$$"
+  const definePrecio = (e) => {
+    if (e === "1") {
+      return "$ - Económico"
+    } else if (e === "2") {
+      return "$$ - Confort"
+    } else if (e === "3") {
+      return "$$$ - Lujoso"
     } else {
-      return "$$$$"
+      return "$$$$ - Magnífico"
     }
-   })}
   }
 
   return (
@@ -33,7 +31,8 @@ function Hotels(props) {
             disponibleDesde={hotel.availabilityFrom}
             disponibleHasta={hotel.availabilityTo}
             cuartos={hotel.rooms}
-            precio={hotelPrecio}
+            precio={hotel.price}
+            definePrecio = {definePrecio(hotel.price)}
           />
         );
       })}

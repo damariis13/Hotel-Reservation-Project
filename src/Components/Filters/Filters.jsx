@@ -8,6 +8,7 @@ function Filters(props) {
     props.setPais("Todos");
     props.setTamaño("Todos");
     props.setPrecio("Todos");
+    props.setImprimePrecio("Todos");
   };
 
   const manejarCambioDesde = (evento) => {
@@ -27,8 +28,21 @@ function Filters(props) {
   };
 
   const manejarCambioPrecio = (evento) => {
-    props.setPrecio(evento.target.value);
-  };
+    props.setPrecio(evento.target.value)
+    props.setImprimePrecio(
+      () => {
+        if (evento.target.value === "1") {
+          return "$ - Económico"
+        } else if (evento.target.value === "2") {
+          return "$$ - Confort"
+        } else if (evento.target.value === "3") {
+          return "$$$ - Lujoso"
+        } else {
+          return "$$$$ - Magnífico"
+        }
+      }
+      );
+  }
 
   return (
     <div className="filtros">

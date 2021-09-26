@@ -15,7 +15,7 @@ function Hotel(props) {
       <p className="texto">{props.descripcion}</p>
       <h4>Desde {props.fecha1UNIX}</h4>
       <h4>Hasta {props.disponibleHasta}</h4>
-      <p className="pre-hab">{props.descripcionPrecio}
+      <p className="pre-hab">{props.precio}
       <span className="Habitaciones"><i class='bx bxs-bed'></i><div className="linea"></div>{props.cuartos} Habitaciones</span> </p>
       <button>Reservar</button>
     </div>
