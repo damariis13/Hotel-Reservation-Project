@@ -1,0 +1,17 @@
+
+ .hoteles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contenedor-hoteles {
+    margin-top: 25px;
+    max-width: 1000px;
+    min-width: 860px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
