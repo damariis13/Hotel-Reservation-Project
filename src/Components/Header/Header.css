@@ -20,6 +20,7 @@
 }
 
 .texto-encabezado {
+  padding-top: 20px;
   z-index: 10;
   position: relative;
 }

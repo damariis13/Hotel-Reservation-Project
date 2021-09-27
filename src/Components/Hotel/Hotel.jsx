@@ -1,12 +1,9 @@
 import React from "react";
-import { hotelsData } from "../../hotelsData";
 import "./Hotel.css";
 
 
 
 function Hotel(props) {
-
-
   return (
     <div className="hotel">
       <img width="100%" src={props.imagen} alt={props.nombre} />
@@ -21,17 +18,5 @@ function Hotel(props) {
     </div>
   );
 }
-
-// let hotelPrecio = () => {
-//   if (hotelsData.price === "1") {
-//     return "$"
-//   } else if (hotelsData.price === "2") {
-//     return "$$"
-//   } else if (hotelsData.price === "3") {
-//     return "$$$"
-//   } else if (hotelsData.price === "4") {
-//     return "$$$$"
-//   }
-// }
 
 export default Hotel;
