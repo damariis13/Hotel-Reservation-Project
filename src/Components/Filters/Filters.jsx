@@ -8,7 +8,6 @@ function Filters(props) {
     props.setPais("Todos");
     props.setTamaño("Todos");
     props.setPrecio("Todos");
-    props.setImprimePrecio("Todos");
   };
 
   const manejarCambioDesde = (evento) => {
@@ -29,19 +28,6 @@ function Filters(props) {
 
   const manejarCambioPrecio = (evento) => {
     props.setPrecio(evento.target.value)
-    props.setImprimePrecio(
-      () => {
-        if (evento.target.value === "1") {
-          return "$ - Económico"
-        } else if (evento.target.value === "2") {
-          return "$$ - Confort"
-        } else if (evento.target.value === "3") {
-          return "$$$ - Lujoso"
-        } else {
-          return "$$$$ - Magnífico"
-        }
-      }
-      );
   }
 
   return (
@@ -73,10 +59,10 @@ function Filters(props) {
             <i className='bx bx-dollar' ></i>
             <select value={props.precio} onChange={manejarCambioPrecio}>
                 <option value="Todos">Todos</option>
-                <option value="1">$</option>
-                <option value="2">$$</option>
-                <option value="3">$$$</option>
-                <option value="4">$$$$</option>
+                <option value="$">$</option>
+                <option value="$$">$$</option>
+                <option value="$$$">$$$</option>
+                <option value="$$$$">$$$$</option>
             </select>
         </div>
         {/* filtro tamaño */}

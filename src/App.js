@@ -7,27 +7,11 @@ import Hotels from "./Components/Hotels/Hotels";
 import { hotelsData } from "./hotelsData";
 
 function App() {
-  const [desde, setDesde] = useState(null);
-  const [hasta, setHasta] = useState(null);
+  const [desde, setDesde] = useState("");
+  const [hasta, setHasta] = useState("");
   const [pais, setPais] = useState("Todos");
   const [tamaño, setTamaño] = useState("Todos");
-  const [imprimePrecio, setImprimePrecio] = useState("Todos")
   const [precio, setPrecio] = useState("Todos");
-
-  // Opciones para LocaleDateString
-const opciones = {
-  weekday: "long",
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-};
-
-// Convertir Date Strings a fechas naturales
-let fecha1UNIX = new Date(hotelsData.availabilityFrom+"T00:00:00").getTime();
-
-let desdeNaturalHotel = new Date(hotelsData.availabilityFrom + "T00:00:00").toLocaleDateString("es-PE", opciones);
-let hastaNaturalHotel = new Date(hotelsData.availabilityTo*1000 + "T00:00:00").toLocaleDateString("es-PE", opciones);
-
 
 
 // Filtrar Hoteles por Pais
@@ -59,19 +43,8 @@ let hastaNaturalHotel = new Date(hotelsData.availabilityTo*1000 + "T00:00:00").t
         return hotel.rooms >= 20;
       } 
     }
+    return false;
   });
-
-
-
-  let descripcionTamaño = () => {
-    if (tamaño <= 10) {
-      return "Pequeño"
-    } else if (tamaño > 10 && tamaño < 20) {
-      return "Mediano"
-    } else if (tamaño >= 20) {
-      return "Grande"
-    }
-  }
 
 
   return (
@@ -79,9 +52,8 @@ let hastaNaturalHotel = new Date(hotelsData.availabilityTo*1000 + "T00:00:00").t
       <Header 
       desde={desde}
       hasta={hasta}
-      pais={pais} 
-      // precio={descripcionPrecio}
-      imprimePrecio = {imprimePrecio}
+      pais={pais}
+      precio={precio} 
       tamaño={tamaño}
       />
       <Filters
@@ -91,21 +63,15 @@ let hastaNaturalHotel = new Date(hotelsData.availabilityTo*1000 + "T00:00:00").t
         hasta={hasta}
         precio={precio}
         setPrecio={setPrecio}
-        imprimePrecio = {imprimePrecio}
-        setImprimePrecio = {setImprimePrecio}
         pais={pais}
         setPais={setPais}
         tamaño={tamaño}
         setTamaño={setTamaño}
         filtroPais={filtrarPais}
-        // hotelsFiltered={hotelsFiltered}
-        // setHotelsFiltered={setHotelsFiltered}
         hotelsData={hotelsData}
       />
       <Hotels 
-        Desde = {desde}
         hoteles={hotelsData}
-        // listaHoteles={hotelsFiltered} 
         filtrarLista={filtrarPaisPrecioTamaño}
       />
     </div>

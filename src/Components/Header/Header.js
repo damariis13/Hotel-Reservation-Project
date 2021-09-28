@@ -2,6 +2,8 @@ import React from "react";
 import "./Header.css";
 
 function Header(props) {
+
+  //Opciones para LocaleDateString
   const opciones = {
     weekday: "long",
     year: "numeric",
@@ -9,17 +11,37 @@ function Header(props) {
     day: "numeric",
   };
 
-  let desdeNatural = new Date(props.desde+"T00:00:00").toLocaleDateString("es-PE", opciones);
-  let hastaNatural = new Date(props.hasta+"T00:00:00").toLocaleDateString("es-PE", opciones);
+// Condicional para no mostrar "invalid Date" en header cuando fechas vacías
+  function convertirTiempoHeader(disponibleHeader) {
+      if(disponibleHeader !== "") {
+        return new Date(disponibleHeader+"T00:00:00").toLocaleDateString("es-PE", opciones);
+      } else {
+      return ""
+    }
+  }
 
-  
+  //Condicional para los Precios en Header
+  function precioHeader(precioNatural) {
+    if (precioNatural === "$") {
+      return "$ - Económico"
+    } else if (precioNatural === "$$") {
+      return "$$ - Confort"
+    } else if (precioNatural === "$$$") {
+      return "$$$ - Lujoso"
+    } else if (precioNatural === "$$$$"){
+      return "$$$$ - Magnífico"
+    } else {
+      return "Todos"
+    }
+  };
+
   return (
     <div className="header">
         <div className="texto-encabezado">
             <h1>Busqueda de Hoteles</h1>
-            <h3>Fecha seleccionada: {desdeNatural} y {hastaNatural}</h3>
+            <h3>Fecha seleccionada: {convertirTiempoHeader(props.desde)} y {convertirTiempoHeader(props.hasta)}</h3>
             <h3>País seleccionado: {props.pais} </h3>
-            <h3>Precio seleccionado: {props.imprimePrecio}</h3>
+            <h3>Precio seleccionado: {precioHeader(props.precio)}</h3>
             <h3>Tamaño seleccionado: {props.tamaño}</h3>
         </div>
     </div>
