@@ -7,7 +7,11 @@ export const hotelsData = [
   {
     slug: 'la-bamba-de-areco',
     name: 'La Bamba de Areco',
+<<<<<<< HEAD
     photo: process.env.PUBLIC_URL+"/images/la-bamba-de-areco.jpg",
+=======
+    photo: "/images/la-bamba-de-areco.jpg",
+>>>>>>> 1cf5d6949e14be33d7cefe114e28caf5dda6c07e
     description: 'La Bamba de Areco está ubicada en San Antonio de Areco, en el corazón de la pampa. Es una de las estancias más antiguas de la Argentina, recientemente restaurada para ofrecer a sus huéspedes todo el confort y esplendor colonial.',
     availabilityFrom: today.valueOf(),
     availabilityTo: today.valueOf() + 864000000, // 10 days
