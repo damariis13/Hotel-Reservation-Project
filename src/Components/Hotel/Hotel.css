@@ -1,6 +1,6 @@
 
 .hotel {
-  width: 20vw;
+  width: 30%;
   min-width: 250px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   border-radius: 10px;
@@ -53,12 +53,15 @@
   --webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.4); 
 } 
 
-.hotel > h4 {
+.hotel h4 {
   background-color: #edf6f9;
-  margin: 10px 0px;
   padding: 8px 10px;
   border-radius: 5px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 0px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.fechas-hotel h4 {
+  margin-bottom: 12px;
 }
 
 .hotel > button {
@@ -67,36 +70,52 @@
   align-items: center;
   font-size: 1.3em;
   font-weight: 600;
+  padding: 7px 0px;
+  margin: 5px;
+  margin-bottom: 10px;
   background-color: #90e4d9;
   color: black;
   border-color: #83ddd1;
   font-family: "Roboto", sans-serif;
   border-radius: 5px;
-  margin-left: 10px;
-  padding: 7px 6vw;
-  max-width: 300px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .hotel .pre-hab {
-  padding: 0px 0px 20px 10px;
+  padding: 0px 10px 10px 10px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
 
 .Habitaciones {
-  padding: 10px;
-  border-radius: 3px;
-  border: #3d405b 2px solid;
   display: flex;
-  /* box-shadow: rgba(60, 64, 67, 0.3) 0px 0px 3px 0px, rgba(124, 163, 160, 0.15) 0px 1px 1px 1px; */
+  font-size: 1.1em;
+  background-color: #4361ee;
+  padding: 15px 5px;
+  font-weight: 600;
+  color: #FFFF;
+  box-shadow: rgba(17, 17, 26, 0.1) 4px 4px 4px, rgba(17, 17, 26, 0.3) 0px 0px 7px;
 }
 
-.Habitaciones > .bx {
-  font-size: 1.3em;
+.cama-icono {
   padding-right: 5px;
   position: relative;
   top: 2px;
 }
+
+.signo-dolar {
+  color: #ebbc24;
+  padding: 15px 5px 15px 0px;
+}
+
+.signo-dolar .bx-dollar {
+  font-weight: 700;
+  font-size: 1.4em;
+}
+
+.signo-dolar .bx-plomo {
+  color: rgba(0,0,0,0.3)
+}
+
 

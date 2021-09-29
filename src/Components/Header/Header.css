@@ -32,7 +32,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: #17738f;  
-    font-size: 2.5em;
+    font-size: 3em;
     text-align: center;
     padding: 20px 0px;
   }
@@ -40,7 +40,7 @@
   .texto-encabezado > h3 {
     font-family: "Kaisei Opti", serif;
     color: #bcd3dd; 
-    font-size: 1.4em;
+    font-size: 1.6em;
     padding: 6px;
     text-align: center;
   }

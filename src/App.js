@@ -13,9 +13,35 @@ function App() {
   const [tamaño, setTamaño] = useState("Todos");
   const [precio, setPrecio] = useState("Todos");
 
+// Convertir fecha
+let DS_desde = new Date(desde+"T00:00:00");
+let DS_hasta = new Date(hasta+"T00:00:00");
+
+//Convertir a UNIX(milisegundos)
+let desdeUNIX = DS_desde.getTime();
+let hastaUNIX = DS_hasta.getTime();
+
+// Filtrar Por fechas
+let hotelesFiltradosFecha;
+
+  if (desde !== "" && hasta !== "") {
+     hotelesFiltradosFecha = hotelsData.filter((hotel) => {
+      if(
+        hotel.availabilityFrom <= desdeUNIX && 
+        hotel.availabilityTo >= hastaUNIX
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+  } else {
+    hotelesFiltradosFecha = hotelsData;
+  };
+
 
 // Filtrar Hoteles por Pais
-  const filtrarPais = hotelsData.filter((hotel) => {
+  const filtrarFechaPais = hotelesFiltradosFecha.filter((hotel) => {
     if (pais === "Todos") {
       return true;
     } else {
@@ -23,7 +49,7 @@ function App() {
     }
   });
 
-  const filtrarPaisPrecio = filtrarPais.filter((hotel) => {
+  const filtrarFechaPaisPrecio = filtrarFechaPais.filter((hotel) => {
     if(precio === "Todos") {
       return true;
     } else {
@@ -31,7 +57,7 @@ function App() {
     }
   })
 
-  const filtrarPaisPrecioTamaño = filtrarPaisPrecio.filter((hotel) => {
+  const filtrarFechaPaisPrecioTamaño = filtrarFechaPaisPrecio.filter((hotel) => {
     if(tamaño === "Todos") {
       return true
     } else {
@@ -67,12 +93,11 @@ function App() {
         setPais={setPais}
         tamaño={tamaño}
         setTamaño={setTamaño}
-        filtroPais={filtrarPais}
         hotelsData={hotelsData}
       />
       <Hotels 
         hoteles={hotelsData}
-        filtrarLista={filtrarPaisPrecioTamaño}
+        filtrarLista={filtrarFechaPaisPrecioTamaño}
       />
     </div>
   );

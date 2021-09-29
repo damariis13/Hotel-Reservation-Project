@@ -22,32 +22,37 @@ function Hotel(props) {
       return (
               <React.Fragment>
                 <i className='bx bx-dollar' ></i>
+                <i className='bx bx-dollar bx-plomo'></i>
+                <i className='bx bx-dollar bx-plomo'></i>
+                <i className='bx bx-dollar bx-plomo'></i>
               </React.Fragment>
               )
     } else if (precioCard === 2) {
       return (
-
               <React.Fragment>
-                <i className='bx bx-dollar' ></i>
-                <i className='bx bx-dollar' ></i>
+                <i className='bx bx-dollar'></i>
+                <i className='bx bx-dollar'></i>
+                <i className='bx bx-dollar bx-plomo'></i>
+                <i className='bx bx-dollar bx-plomo'></i>
               </React.Fragment>
               )
     } else if (precioCard === 3) {
       return ( 
-        <React.Fragment>
-        <i className='bx bx-dollar' ></i>
-        <i className='bx bx-dollar' ></i>
-        <i className='bx bx-dollar' ></i>
-        </React.Fragment>
+              <React.Fragment>
+              <i className='bx bx-dollar'></i>
+              <i className='bx bx-dollar'></i>
+              <i className='bx bx-dollar'></i>
+              <i className='bx bx-dollar bx-plomo'></i>
+              </React.Fragment>
       )
     } else {
       return (
-        <React.Fragment>
-        <i className='bx bx-dollar' ></i>
-        <i className='bx bx-dollar' ></i>
-        <i className='bx bx-dollar' ></i>
-        <i className='bx bx-dollar' ></i>
-        </React.Fragment>
+              <React.Fragment>
+              <i className='bx bx-dollar' ></i>
+              <i className='bx bx-dollar' ></i>
+              <i className='bx bx-dollar' ></i>
+              <i className='bx bx-dollar' ></i>
+              </React.Fragment>
 
       )
     } 
@@ -59,10 +64,12 @@ function Hotel(props) {
       <h1>{props.nombre}</h1>
       <h3>{props.ciudad}, {props.pais}</h3>
       <p className="texto">{props.descripcion}</p>
+      <div className="fechas-hotel">
       <h4>Desde {convertirTiempo(props.disponibleDesde)}</h4>
       <h4>Hasta {convertirTiempo(props.disponibleHasta)}</h4>
-      <div className="pre-hab">{precioHotelCard(props.precio)}
-      <span className="Habitaciones"><i className='bx bxs-bed'></i><div className="linea"></div>{props.cuartos} Habitaciones</span> </div>
+      </div>
+      <div className="pre-hab"><span className="signo-dolar">{precioHotelCard(props.precio)}</span>
+      <div className="Habitaciones"><span className="cama-icono"><i className='bx bxs-bed'></i></span>{props.cuartos} Habitaciones</div> </div>
       <button>Reservar</button>
     </div>
   );
