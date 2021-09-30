@@ -1,0 +1,19 @@
+
+.listaVacia {
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    margin-top: 30px;
+}
+.bx-sad {
+    font-size: 5rem;
+    color: #3b7a83;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.listaVacia > p {
+    font-size: 1.2rem;
+    color: #4c4c4c;
+    font-weight: 600;
+    text-align: center;
+}
