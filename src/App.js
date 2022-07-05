@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
 import './App.css';
-import Header from "./Components/Header/Header.js";
+import Header from "./Components/Header/Header.jsx";
 import Filters from "./Components/Filters/Filters";
 import Hotels from "./Components/Hotels/Hotels";
 import { hotelsData } from "./hotelsData";

@@ -38,8 +38,8 @@ function Header(props) {
   return (
     <div className="header">
         <div className="texto-encabezado">
-            <h1>Busqueda de Hoteles</h1>
-            <h3>Fecha seleccionada: {convertirTiempoHeader(props.desde)} y {convertirTiempoHeader(props.hasta)}</h3>
+            <h1>Búsqueda de Hoteles</h1>
+            <h3>Fecha seleccionada: {convertirTiempoHeader(props.desde)} - {convertirTiempoHeader(props.hasta)}</h3>
             <h3>País seleccionado: {props.pais} </h3>
             <h3>Precio seleccionado: {precioHeader(props.precio)}</h3>
             <h3>Tamaño seleccionado: {props.tamaño}</h3>

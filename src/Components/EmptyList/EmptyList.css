@@ -3,7 +3,8 @@
     display: flex;
     flex-direction: column;
     width: 1000px;
-    margin-top: 30px;
+    position: absolute;
+    margin-bottom: -100px;
 }
 .bx-sad {
     font-size: 5rem;
